@@ -98,3 +98,31 @@ stopwatchInput.forEach(function (input) {
     }
   });
 });
+
+//timer start 버튼이 눌렸을 떄
+const timerStartBtn = document.querySelector('.timerStart');
+const timerStopBtn = document.querySelector('.timerStop');
+
+timerStartBtn.addEventListener('click', function () {
+  console.log('시작!');
+});
+
+//timer stop 버튼이 눌렸을 때
+timerStopBtn.addEventListener('click', function () {
+  console.log('종료!');
+});
+
+//start 버튼이 눌렸을 때 시간이 감소되는 함수
+stopwatchInput.forEach(function () {
+  let second = document.querySelector('.second');
+  const Interval = setInterval(function (second) {
+    if (parseInt(second.value) > 0) {
+      second.value = parseInt(second.value) - 1;
+    } else if (parseInt(second.value) === 0) {
+      alert('타이머가 종료되었습니다!');
+      clearInterval(Interval);
+    }
+  }, 1000);
+});
+
+//stop 버튼이 눌렸을 때 시간이 멈추는 함수
