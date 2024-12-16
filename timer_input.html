@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="timer.css" />
+    <script defer src="timer_input.js"></script>
+    <title>타이머 맞추기</title>
+  </head>
+  <body>
+    <nav class="nav">
+      <button class="timerNav">타이머</button>
+      <button class="stopwatchNav">스톱워치</button>
+    </nav>
+    <main class="container">
+      <div class="timer">
+        <div class="tmDis timedisplay">
+          <input
+            type="number"
+            class="time hour"
+            name="hour"
+            value="00"
+            min="0"
+            max="23"
+          />
+          <div class="line">:</div>
+          <input
+            type="number"
+            class="time minute"
+            name="minute"
+            value="00"
+            min="0"
+            max="59"
+          />
+          <div class="line">:</div>
+          <input
+            type="number"
+            class="time second"
+            name="second"
+            value="00"
+            min="0"
+            max="59"
+          />
+        </div>
+        <div class="buttons">
+          <button class="timerStart start">START</button>
+          <button class="timerReset reset">RESET</button>
+        </div>
+      </div>
+      <div class="stopwatch">
+        <div class="swDis timedisplay">
+          <input
+            type="number"
+            class="time hour"
+            name="hour"
+            value="00"
+            min="0"
+            max="23"
+          />
+          <div class="line">:</div>
+          <input
+            type="number"
+            class="time minute"
+            name="minute"
+            value="00"
+            min="0"
+            max="59"
+          />
+          <div class="line">:</div>
+          <input
+            type="number"
+            class="time second"
+            name="second"
+            value="00"
+            min="0"
+            max="59"
+          />
+        </div>
+        <div class="buttons">
+          <button class="stopwatchStart button">START</button>
+          <button class="stopwatchLap button">LAP</button>
+          <button class="stopwatchReset reset">RESET</button>
+        </div>
+        <div class="lapList">
+          <ul>
+            <li class="lapContent"></li>
+          </ul>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

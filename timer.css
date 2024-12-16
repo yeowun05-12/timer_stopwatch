@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  width: 1000px;
+  height: 800px;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 상단 네비게이터 */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+  width: 1000px;
+  height: 100px;
+}
+
+.nav button {
+  width: 200px;
+  height: 50px;
+  border: none;
+  background-color: white;
+  font-size: 15px;
+}
+
+.nav button:hover {
+  border-bottom: 3px solid rgb(98, 190, 215);
+  background-color: white;
+  font-size: 15px;
+}
+
+.nav .selected {
+  border-bottom: 3px solid rgb(98, 190, 215);
+  background-color: white;
+  font-size: 15px;
+}
+
+/*input*/
+input {
+  text-align: center;
+}
+
+/* 공통부분*/
+
+.timedisplay {
+  width: 800px;
+  height: 200px;
+  padding-top: 100px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.time {
+  width: 150px;
+  height: 100px;
+  border: 1px solid gray;
+  border-radius: 20px;
+}
+
+.line {
+  font-size: 85px;
+  color: rgb(90, 185, 211);
+}
+
+main .time {
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  width: 100px;
+  height: 50px;
+  border: none;
+  background-color: rgb(107, 145, 188);
+  border-radius: 5px;
+  margin-left: 20px;
+  color: white;
+}
+
+.reset,
+.start {
+  width: 100px;
+  height: 50px;
+  border: none;
+  background-color: rgb(244, 166, 0);
+  border-radius: 5px;
+  margin-left: 20px;
+  color: white;
+}
+
+.button:hover,
+.reset:hover,
+.start:hover {
+  background-color: rgb(78, 78, 78);
+}
+
+.button:active,
+.reset:hover,
+.start:hover {
+  width: 102px;
+  height: 52px;
+}
+
+/*timer 부분*/
+.timer {
+  width: 1000px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*stopwatch 부분*/
+.stopwatch {
+  width: 1000px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
