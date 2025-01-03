@@ -59,6 +59,17 @@ function selectedClassAddNav(button) {
 //timer에 관한 애들 불러옴
 const timerDisplay = document.querySelector('.timer .timedisplay');
 const timerBtn = document.querySelectorAll('.timer button');
+// 시간 표시 요소들 선택
+const hourDisplay = document.querySelector('.timer .time.hour');
+const minuteDisplay = document.querySelector('.timer .time.minute');
+const secondDisplay = document.querySelector('.timer .time.second');
+
+// 코메추가 (타이머 리셋)
+const resetTimer = () => {
+  hourDisplay.textContent = '00';
+  minuteDisplay.textContent = '00';
+  secondDisplay.textContent = '00';
+};
 
 //timer 화면 노출 관련 내용
 timerBtn.forEach((button) => {
@@ -70,12 +81,13 @@ timerBtn.forEach((button) => {
     } else if (button.classList.contains('secondBtn')) {
       handlerClickAddTime('second');
     } else if (button.classList.contains('timerReset')) {
-      location.reload();
+      resetTimer();
     }
   });
 });
 
-//timer 화면에 1씩 추가되는 함수
+//timer 화면에 1씩 추가되는 함수 (내가 만든 코드)
+/*
 function handlerClickAddTime(type) {
   timerDisplay.forEach((timedisplay) => {
     let timeElement;
@@ -109,3 +121,59 @@ function handlerClickAddTime(type) {
     }
   });
 }
+
+*/
+
+// 코메가 만든 코드
+function handlerClickAddTime(type) {
+  const displayMap = {
+    hour: hourDisplay,
+    minute: minuteDisplay,
+    second: secondDisplay,
+  };
+
+  const maxValues = {
+    hour: 23,
+    minute: 59,
+    second: 59,
+  };
+
+  const timeElement = displayMap[type];
+  const maxValue = maxValues[type];
+
+  let currentValue = parseInt(timeElement.textContent);
+  if (currentValue === maxValue) {
+    alert(`${type}를 더 이상 추가할 수 없습니다.`);
+  } else {
+    timeElement.textContent = (currentValue + 1).toString().padStart(2, '0');
+  }
+}
+
+//코메가 만든 함수 시간 추가 되고 감소되는 함수
+let timerInterval;
+
+const startTimer = () => {
+  if (timerInterval) clearInterval(timerInterval);
+
+  timerInterval = setInterval(() => {
+    let seconds = parseInt(secondDisplay.textContent);
+    let minutes = parseInt(minuteDisplay.textContent);
+    let hours = parseInt(hourDisplay.textContent);
+
+    if (seconds > 0) {
+      secondDisplay.textContent = (seconds - 1).toString().padStart(2, '0');
+    } else if (minutes > 0) {
+      minuteDisplay.textContent = (minutes - 1).toString().padStart(2, '0');
+      secondDisplay.textContent = '59';
+    } else if (hours > 0) {
+      hourDisplay.textContent = (hours - 1).toString().padStart(2, '0');
+      minuteDisplay.textContent = '59';
+      secondDisplay.textContent = '59';
+    } else {
+      clearInterval(timerInterval);
+      alert('Time out!');
+    }
+  }, 1000);
+};
+
+document.querySelector('.timerStart').addEventListener('click', startTimer);
