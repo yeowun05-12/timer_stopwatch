@@ -52,7 +52,7 @@ input {
   text-align: center;
 }
 
-/* 공통부분*/
+/* 타이머 부분 */
 
 .timedisplay {
   width: 800px;
@@ -70,16 +70,42 @@ input {
   border-radius: 20px;
 }
 
-.line {
-  font-size: 85px;
-  color: rgb(90, 185, 211);
-}
-
 main .time {
   font-size: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* 스톱워치 부분 */
+.stop {
+  width: 150px;
+  height: 100px;
+  border: 1px solid gray;
+  border-radius: 20px;
+}
+
+.stopdisplay {
+  width: 800px;
+  height: 200px;
+  padding-top: 100px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+main .stop {
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 공통 부분 */
+
+.line {
+  font-size: 85px;
+  color: rgb(90, 185, 211);
 }
 
 .button {

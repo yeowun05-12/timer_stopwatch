@@ -177,3 +177,15 @@ const startTimer = () => {
 };
 
 document.querySelector('.timerStart').addEventListener('click', startTimer);
+
+// 스톱워치 기능 구현
+
+//timer에 관한 애들 불러옴
+const stopDisplay = document.querySelector('.stopwatch .stopdisplay');
+const stopBtn = document.querySelectorAll('.stopwatch button');
+// 시간 표시 요소들 선택
+const stopHourDisplay = document.querySelector('.stopwatch .stop.hour');
+const stopMinuteDisplay = document.querySelector('.stopwatch .stop.minute');
+const stopSecondDisplay = document.querySelector('.stopwatch .stop.second');
+
+
