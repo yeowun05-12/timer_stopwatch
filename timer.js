@@ -56,9 +56,8 @@ function selectedClassAddNav(button) {
   button.classList.add('selected');
 }
 
-/*
 //timer에 관한 애들 불러옴
-const timerDisplay = document.querySelectorAll('.timer .timedisplay');
+const timerDisplay = document.querySelector('.timer .timedisplay');
 const timerBtn = document.querySelectorAll('.timer button');
 
 //timer 화면 노출 관련 내용
@@ -110,4 +109,3 @@ function handlerClickAddTime(type) {
     }
   });
 }
-*/
